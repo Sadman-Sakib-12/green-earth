@@ -117,7 +117,6 @@ const handleDelete=(cartId)=>{
     const filterCart=carts.filter(cart=>cart.id !== cartId)
     carts=filterCart
     showAdd(carts)
-    // console.log(filterCart)
 }
 const showLoading=()=>{
     cardContainer.innerHTML=`
@@ -128,12 +127,10 @@ const showLoading=()=>{
 const handleDetels=(id)=>{
  fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
  .then((res)=>res.json())
- .then((data)=>{console.log(data)
-    showdetels(data.plants)}
+ .then((data)=>showdetels(data.plants)
     )
 }
 const showdetels=(plant)=>{
-    console.log('sakib',plant)
    modalContainer.innerHTML=""
     cardsDetelsModal.showModal()
     modalContainer.innerHTML= `
