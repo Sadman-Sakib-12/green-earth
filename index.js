@@ -54,7 +54,7 @@ const showcart = (plants) => {
     plants.forEach((plant) => {
         cardContainer.innerHTML += `
         <div id="${plant.id}" class="bg-[#FFFFFF] p-5 w-72  space-y-1 h-94 gap-10 shadow">
-                  <img class="w-70 h-40" src="${plant.image}" alt="">
+                  <img class="w-70 h-40 rounded" src="${plant.image}" alt="">
                      <p onclick="handleDetels('${plant.id}')" class="bt font-bold">${plant.name}</p>
                      <p class="text-xs">${plant.description}</p>
                      
