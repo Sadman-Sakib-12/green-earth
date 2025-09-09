@@ -22,24 +22,25 @@ const showCategory = (categories) => {
         categoryContainer.innerHTML += `
         
         <div >
-         <button id="${sakib.id}" class="b-4 hover:bg-[#15803D]  py-2 px-4 rounded mt-2" >${sakib.category_name}</button>
+         <button id="${sakib.id}" class=" hover:bg-green-700 py-2 px-4 rounded mt-2" >${sakib.category_name}</button>
          </div>
         `
-        categoryContainer.addEventListener("click", (e) => {
+    })
+
+}
+       categoryContainer.addEventListener("click", (e) => {
             //  console.log(e)
             const all = document.querySelectorAll("button")
             all.forEach((button) => {
-                button.classList.remove("b-4")
+                button.classList.remove("bg-green-700")
             })
-            if (e.target.localName == "button") {
+            if (e.target.localName==="button") {
                 showLoading()
-                e.target.classList.add("b-4")
+                e.target.classList.add("bg-green-700")
                 loadCart(e.target.id)
             }
         })
-    })
-}
-
+      
 const loadCart = (id) => {
     let url = id ? `https://openapi.programming-hero.com/api/category/${id}` : "https://openapi.programming-hero.com/api/plants"
     fetch(url)
